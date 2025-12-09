@@ -135,6 +135,6 @@ Removing CocoaPods and migrating old projects to SPM
 
 Working with Storyboards + XIB-based reusable cells
 
-📬 Contact
+## 📬 Contact
 
 If you'd like to connect or have questions about this project, feel free to reach out by email @alexjowilson7@gmail.com!
