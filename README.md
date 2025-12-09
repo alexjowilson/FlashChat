@@ -102,24 +102,24 @@ FlashChat/
 
 ## 🛠️ Installation & Setup
 
-### 1️⃣ Clone the repository
+### 1️⃣   Clone the repository
 ```bash
 git clone https://github.com/alexjowilson/FlashChat.git
 cd FlashChat
 ```
-2️⃣ Install dependencies (automatically handled by SPM)
+### 2️⃣   Install dependencies (automatically handled by SPM)
 
 Open the project in Xcode — SPM will fetch all packages.
 
-3️⃣ Add your Firebase configuration
+### 3️⃣   Add your Firebase configuration
 
 Place your GoogleService-Info.plist inside the root of the Xcode project.
 
-4️⃣ Run the app
+### 4️⃣   Run the app
 
 Choose a simulator and hit ⌘ + R.
 
-💡 What I Learned
+## 💡 What I Learned
 
 Integrating Firebase using SPM
 
