@@ -1,20 +1,35 @@
 //
 //  AppDelegate.swift
-//  Flash Chat iOS13
+//  Flash Chat
 //
-//  Created by Angela Yu on 21/10/2019.
-//  Copyright © 2019 Angela Yu. All rights reserved.
+//  Created by Alex Wilson on 11/25/25.
+//  Copyright © 2025 Alex Wilson. All rights reserved.
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    var window: UIWindow?
+
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+
+        // This is called when your app finishes launching.
+        // You can customize things here later if needed.
+        print("inside didFinishLaunchingWithOptions() inside AppDelegate")
+        FirebaseApp.configure()
+        let db = Firestore.firestore()
+        print(db)
+
         return true
     }
 
