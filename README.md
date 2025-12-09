@@ -104,7 +104,7 @@ FlashChat/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/alexjowilson/FlashChat.git
 cd FlashChat
 ```
 2️⃣ Install dependencies (automatically handled by SPM)
