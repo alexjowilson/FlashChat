@@ -61,9 +61,7 @@ All external libraries installed via SPM:
 ---
 
 ## 🏗️ Project Structure
-
 FlashChat/
-│
 ├── Controllers/
 │ ├── WelcomeViewController.swift
 │ ├── RegisterViewController.swift
@@ -74,7 +72,7 @@ FlashChat/
 │ └── Message.swift
 │
 ├── Views/
-│ └── MessageCell.xib
+│ ├── MessageCell.xib
 │ └── MessageCell.swift
 │
 ├── Screenshots/
@@ -84,7 +82,6 @@ FlashChat/
 ├── AppDelegate.swift
 ├── GoogleService-Info.plist
 └── README.md
-
 
 ---
 
@@ -108,7 +105,7 @@ FlashChat/
 ```bash
 git clone <your-repo-url>
 cd FlashChat
-
+```
 2️⃣ Install dependencies (automatically handled by SPM)
 
 Open the project in Xcode — SPM will fetch all packages.
