@@ -1,0 +1,55 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Xcode
+DerivedData/
+build/
+
+# Xcode user settings
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+
+# SwiftPM
+.swiftpm/
+.build/
+
+# CocoaPods (not used anymore but safe to ignore leftovers)
+Pods/
+Podfile.lock
+
+# Carthage (not used here)
+Carthage/Build/
+
+# Firebase crash logs
+firebase_app_id_file.json
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+
+# Archives
+*.xcarchive
+
+# Generated files
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Ignore backup files
+*~
+*.swp
+*.swo
+
