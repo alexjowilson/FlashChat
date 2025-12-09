@@ -61,6 +61,7 @@ All external libraries installed via SPM:
 ---
 
 ## 🏗️ Project Structure
+```text
 FlashChat/
 ├── Controllers/
 │ ├── WelcomeViewController.swift
@@ -82,7 +83,7 @@ FlashChat/
 ├── AppDelegate.swift
 ├── GoogleService-Info.plist
 └── README.md
-
+```
 ---
 
 ## 🧰 Technologies Used
