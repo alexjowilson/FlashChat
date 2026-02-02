@@ -135,6 +135,18 @@ Removing CocoaPods and migrating old projects to SPM
 
 Working with Storyboards + XIB-based reusable cells
 
+## 🧠 Reliability & Memory Profiling (Xcode Instruments)
+
+To validate memory behavior and catch potential retain cycles, I profiled the core user flow using **Xcode Instruments**:
+
+**Tested flow:** login → send message → logout → login again  
+**Tools used:** Leaks + Allocations
+
+✅ **Result:** No memory leaks were detected during this session, and allocations remained stable across repeated auth/chat cycles.
+
+<img src="Screenshots/Instrument.jpg" width="900" alt="Xcode Instruments showing Leaks checks passing and Allocations timeline for FlashChat"/>
+
+
 ## 📬 Contact
 
 If you'd like to connect or have questions about this project, feel free to reach out by email @alexjowilson7@gmail.com!
