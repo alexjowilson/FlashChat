@@ -9,13 +9,16 @@ This project demonstrates clean architecture, real-time data syncing using **Fir
 ### 🔐 User Authentication
 - Register new users with email & password  
 - Secure login using Firebase Authentication  
-- Automatic session handling  
+- Automatic session handling 
+- Input validation with user-friendly error alerts 
 
 ### 💬 Real-Time Messaging
 - Messages sync instantly using **Firestore Snapshot Listeners**
 - Messages auto-sort by timestamp  
 - Smooth autoscroll to latest messagea
-- Timestamps displayed on each message with sender-based alignment  
+- Timestamps displayed on each message with sender-based alignment 
+- Toast notifications for message status
+- Empty message validation
 
 ### 👤 Sender & Receiver UI
 - Custom `UITableViewCell` showing:
@@ -28,7 +31,13 @@ This project demonstrates clean architecture, real-time data syncing using **Fir
 - Polished UIKit interface  
 - GhostTypewriter animation on welcome screen  
 - Adaptive keyboard-safe input field (using `keyboardLayoutGuide`)  
-- Fully autolayout-driven design  
+- Fully autolayout-driven design 
+
+### 🔔 Toast Notifications
+- Message sent confirmation
+- Empty message validation
+- Login error feedback
+- Custom animated toast UI
 
 ### 📦 Swift Package Manager (SPM)
 All external libraries installed via SPM:
@@ -39,7 +48,6 @@ All external libraries installed via SPM:
 ---
 
 ## 🚀 Screenshots
-
 ### **Landing & Registration**
 | Landing | Register |
 |--------|----------|
@@ -51,6 +59,17 @@ All external libraries installed via SPM:
 | Log In |
 |--------|
 | <img src="Screenshots/LogIn.png" width="250"/> |
+
+---
+
+### **Toast Notifications & Validation**
+| Empty Message | Message Sent |
+|---------------|--------------|
+| <img src="Screenshots/EmptyMessage.png" width="250"/> | <img src="Screenshots/SentMessage.png" width="250"/> |
+
+| Missing Credentials | Invalid Login |
+|---------------------|---------------|
+| <img src="Screenshots/EmptyUserPassword.png" width="250"/> | <img src="Screenshots/InvalidEmailOrPassword.png" width="250"/> |
 
 ---
 
