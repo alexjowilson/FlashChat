@@ -35,49 +35,49 @@ class LoginViewController: UIViewController {
             guard let self else { return }
 
             if let err = error as NSError? {
-                print("🔥 domain:", err.domain)
-                print("🔥 code:", err.code)
-                print("🔥 message:", err.localizedDescription)
-
+                debugLog("🔥 domain: \(err.domain)")
+                debugLog("🔥 code: \(err.code)")
+                debugLog("🔥 message: \(err.localizedDescription)")
+                
                 switch err.code {
                 case AuthErrorCode.userNotFound.rawValue:
-                    print("Account doesn't exist")
+                    debugLog("Account doesn't exist")
                     showAlert(title: "Account Not Found",
                               message: "No user exists with that email. Please register first.")
 
                 case AuthErrorCode.wrongPassword.rawValue:
-                    print("Incorrect Password")
+                    debugLog("Incorrect Password")
                     showAlert(title: "Incorrect Password",
                               message: "That password is incorrect. Please try again.")
 
                 case AuthErrorCode.invalidCredential.rawValue:   // ✅ this is 17004
                     // Common for both “no user” and “wrong password”
-                    print("Invalid Credentials (no user and wrong password")
+                    debugLog("Invalid Credentials (no user and wrong password")
                     showAlert(title: "Login Failed",
                               message: "Invalid email or password.")
 
                 case AuthErrorCode.invalidEmail.rawValue:
-                    print("Invalid email")
+                    debugLog("Invalid email")
                     showAlert(title: "Invalid Email",
                               message: "Please enter a valid email address.")
 
                 case AuthErrorCode.networkError.rawValue:
-                    print("There was a network error")
+                    debugLog("There was a network error")
                     showAlert(title: "Network Error",
                               message: "Please check your internet connection and try again.")
 
                 case AuthErrorCode.tooManyRequests.rawValue:
-                    print("Too many attempts have been made")
+                    debugLog("Too many attempts have been made")
                     showAlert(title: "Too Many Attempts",
                               message: "Too many failed attempts. Try again later.")
 
                 case AuthErrorCode.userDisabled.rawValue:
-                    print("The account has been disabled")
+                    debugLog("The account has been disabled")
                     showAlert(title: "Account Disabled",
                               message: "This account has been disabled.")
 
                 default:
-                    print("Login failed (default switch statement)")
+                    debugLog("Login failed (default switch statement)")
                     showAlert(title: "Login Failed", message: err.localizedDescription)
                 }
 

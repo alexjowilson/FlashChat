@@ -64,27 +64,28 @@ All external libraries installed via SPM:
 ```text
 FlashChat/
 ├── Controllers/
-│ ├── WelcomeViewController.swift
-│ ├── RegisterViewController.swift
-│ ├── LoginViewController.swift
-│ └── ChatViewController.swift
+│   ├── WelcomeViewController.swift
+│   ├── RegisterViewController.swift
+│   ├── LoginViewController.swift
+│   └── ChatViewController.swift
 │
 ├── Models/
-│ └── Message.swift
+│   └── Message.swift
 │
 ├── Views/
-│ ├── MessageCell.xib
-│ └── MessageCell.swift
+│   ├── MessageCell.xib
+│   └── MessageCell.swift
 │
 ├── Screenshots/
-│ └── (all images used in README)
+│   └── (all images used in README)
 │
-├── Constants.swift
 ├── AppDelegate.swift
+├── SceneDelegate.swift
+├── Constants.swift
+├── Utils.swift
 ├── GoogleService-Info.plist
 └── README.md
 ```
----
 
 ## 🧰 Technologies Used
 

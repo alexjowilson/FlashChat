@@ -20,15 +20,14 @@ class RegisterViewController: UIViewController {
               // ...
                 // if there is an error
                 if let e = error{
-                    print("There's an error mate")
-                    print(e)
-                    print(e.localizedDescription)
+                    debugLog("There's an error mate")
+                    debugLog("Registration error: \(e.localizedDescription)")
                 }
                 // The user successfully registered
                 else{
-                    print("The user successfully registered")
-                    print("email = " + email)
-                    print("password = " + password)
+                    debugLog("The user successfully registered")
+                    debugLog("email = " + email)
+                    debugLog("password = " + password)
                     
                     
                     //Navigate to ChatViewController
