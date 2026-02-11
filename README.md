@@ -14,7 +14,8 @@ This project demonstrates clean architecture, real-time data syncing using **Fir
 ### 💬 Real-Time Messaging
 - Messages sync instantly using **Firestore Snapshot Listeners**
 - Messages auto-sort by timestamp  
-- Smooth autoscroll to latest message  
+- Smooth autoscroll to latest messagea
+- Timestamps displayed on each message with sender-based alignment  
 
 ### 👤 Sender & Receiver UI
 - Custom `UITableViewCell` showing:
@@ -135,6 +136,8 @@ Using keyboardLayoutGuide to create responsive chat input UX
 Removing CocoaPods and migrating old projects to SPM
 
 Working with Storyboards + XIB-based reusable cells
+
+Implementing dual-label layouts for dynamic UI alignment
 
 ## 🧠 Reliability & Memory Profiling (Xcode Instruments)
 

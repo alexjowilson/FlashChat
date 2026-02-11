@@ -11,4 +11,5 @@ import Foundation
 struct Message{
     let sender: String // leomessi@gmail.com
     let body: String
+    let timestamp: Date
 }

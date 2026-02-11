@@ -95,16 +95,11 @@ class ChatViewController: UIViewController {
         }
     }
     
-    
-    
-    
     // function to load messages from Firebase DB
     func loadMessages() {
         
         debugLog("inside loadMessages")
         
-        
-
         db.collection(Constants.FStore.collectionName)
             .order(by: Constants.FStore.dateField)            // make sure messages are ordered
             .addSnapshotListener { [weak self] querySnapshot, error in
@@ -120,9 +115,10 @@ class ChatViewController: UIViewController {
                         for doc in snapshotDocuments {
                             let data = doc.data()
                             if let sender = data[Constants.FStore.senderField] as? String,
-                               let messageBody = data[Constants.FStore.bodyField] as? String {
+                               let messageBody = data[Constants.FStore.bodyField] as? String,
+                               let timestamp = data[Constants.FStore.dateField] as? Timestamp{
 
-                                let newMessage = Message(sender: sender, body: messageBody)
+                                let newMessage = Message(sender: sender, body: messageBody, timestamp: timestamp.dateValue())
                                 self.messages.append(newMessage)
                             }
                         }

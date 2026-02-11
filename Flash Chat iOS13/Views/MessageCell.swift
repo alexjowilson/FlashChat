@@ -6,6 +6,8 @@ class MessageCell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var rightAvatar: UIImageView!
     @IBOutlet weak var leftAvatar: UIImageView!
+    @IBOutlet weak var rightTimestampLabel: UILabel!
+    @IBOutlet weak var leftTimestampLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,21 +33,33 @@ class MessageCell: UITableViewCell {
     
     func configure(with message: Message, currentUserEmail: String) {
         let isMe = message.sender == currentUserEmail
-        print("sender:", message.sender, "| currentUser:", currentUserEmail, "| isMe:", isMe)
+        debugLog("sender: \(message.sender) | currentUser: \(currentUserEmail) | isMe: \(isMe)")
         
         label.text = message.body
-
+        
+        // Format the timestamp
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short // "4:20 PM"
+        
         // Hide or show correct avatars
         leftAvatar.isHidden = isMe
         rightAvatar.isHidden = !isMe
+        
+        // Hide or show correct timestamp
+        leftTimestampLabel.isHidden = isMe
+        rightTimestampLabel.isHidden = !isMe
+        
 
         // Bubble colors based on sender
         if isMe {
             messageBubble.backgroundColor = UIColor.systemPurple
             label.textColor = .white
+            rightTimestampLabel.text = formatter.string(from: message.timestamp)
+            
         } else {
             messageBubble.backgroundColor = UIColor.systemGray5
             label.textColor = .black
+            leftTimestampLabel.text = formatter.string(from: message.timestamp)
         }
     }
 }
