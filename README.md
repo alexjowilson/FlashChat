@@ -15,7 +15,7 @@ This project demonstrates clean architecture, real-time data syncing using **Fir
 ### 💬 Real-Time Messaging
 - Messages sync instantly using **Firestore Snapshot Listeners**
 - Messages auto-sort by timestamp  
-- Smooth autoscroll to latest messagea
+- Smooth autoscroll to latest message
 - Timestamps displayed on each message with sender-based alignment 
 - Toast notifications for message status
 - Empty message validation
@@ -48,6 +48,7 @@ All external libraries installed via SPM:
 ---
 
 ## 🚀 Screenshots
+
 ### **Landing & Registration**
 | Landing | Register |
 |--------|----------|
@@ -56,20 +57,9 @@ All external libraries installed via SPM:
 ---
 
 ### **Authentication**
-| Log In |
-|--------|
-| <img src="Screenshots/LogIn.png" width="250"/> |
-
----
-
-### **Toast Notifications & Validation**
-| Empty Message | Message Sent |
-|---------------|--------------|
-| <img src="Screenshots/EmptyMessage.png" width="250"/> | <img src="Screenshots/SentMessage.png" width="250"/> |
-
-| Missing Credentials | Invalid Login |
-|---------------------|---------------|
-| <img src="Screenshots/EmptyUserPassword.png" width="250"/> | <img src="Screenshots/InvalidEmailOrPassword.png" width="250"/> |
+| Log In | Missing Credentials | Invalid Login |
+|--------|---------------------|---------------|
+| <img src="Screenshots/LogIn.png" width="250"/> | <img src="Screenshots/EmptyUserPassword.png" width="250"/> | <img src="Screenshots/InvalidEmailOrPassword.png" width="250"/> |
 
 ---
 
@@ -77,6 +67,13 @@ All external libraries installed via SPM:
 | Empty Chat | Typing | Sent | Chatting |
 |------------|--------|------|----------|
 | <img src="Screenshots/AfterSigningIn.png" width="250"/> | <img src="Screenshots/TypingMessage.png" width="250"/> | <img src="Screenshots/SentMessage.png" width="250"/> | <img src="Screenshots/Chatting.png" width="250"/> |
+
+---
+
+### **Toast Notifications**
+| Empty Message | Message Sent |
+|---------------|--------------|
+| <img src="Screenshots/EmptyMessage.png" width="250"/> | <img src="Screenshots/SentMessage.png" width="250"/> |
 
 ---
 
