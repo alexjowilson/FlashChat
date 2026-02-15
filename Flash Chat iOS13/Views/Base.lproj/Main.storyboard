@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ih1-rd-Uht">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ih1-rd-Uht">
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +12,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="gOV-Nw-jnq">
             <objects>
-                <viewController id="Tim-3B-f4n" customClass="WelcomeViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tim-3B-f4n" customClass="WelcomeViewController" customModule="FlashChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H86-OM-sMN">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +83,7 @@
         <!--Register View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RegisterViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RegisterViewController" customModule="FlashChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h2S-Ae-zdW">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,17 +168,17 @@
                     <connections>
                         <outlet property="emailTextfield" destination="u72-XV-6FN" id="Nfc-8N-TNr"/>
                         <outlet property="passwordTextfield" destination="hLb-P9-NkF" id="uaM-fo-m8M"/>
-                        <segue destination="lwd-AH-u8E" kind="show" identifier="RegisterToChat" id="UCq-x5-hco"/>
+                        <segue destination="Xys-eR-30N" kind="show" identifier="RegisterToProfileSetup" id="jLW-pI-lVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867.1641791044774" y="-295.19450800915331"/>
+            <point key="canvasLocation" x="1987" y="-630"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Hzg-jR-yiY">
             <objects>
-                <viewController id="5v2-hE-4Ub" customClass="LoginViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5v2-hE-4Ub" customClass="LoginViewController" customModule="FlashChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NR3-PA-yDz">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,17 +263,18 @@
                     <connections>
                         <outlet property="emailTextfield" destination="F21-w0-z4z" id="YUG-Hl-Rxj"/>
                         <outlet property="passwordTextfield" destination="abR-gz-opL" id="xCU-X2-hrx"/>
-                        <segue destination="lwd-AH-u8E" kind="show" identifier="LoginToChat" id="tRk-vp-Gse"/>
+                        <segue destination="Xys-eR-30N" kind="show" identifier="LoginToProfileSetup" id="ep7-Dd-6JD"/>
+                        <segue destination="lwd-AH-u8E" kind="show" identifier="LoginToChat" id="kRb-6S-jyo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XcE-Gk-YZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867.1641791044774" y="643.93592677345532"/>
+            <point key="canvasLocation" x="1987" y="1048"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="yeH-Ia-3JZ">
             <objects>
-                <viewController id="lwd-AH-u8E" customClass="ChatViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lwd-AH-u8E" customClass="ChatViewController" customModule="FlashChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CEy-W8-acN">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,12 +343,13 @@
                     <connections>
                         <outlet property="bottomConstraint" destination="KKG-6H-f0d" id="gcd-cE-heb"/>
                         <outlet property="messageTextfield" destination="UWj-GQ-Vph" id="INS-Xk-EA9"/>
+                        <outlet property="sendButton" destination="pym-e9-R2r" id="mDu-1R-nGu"/>
                         <outlet property="tableView" destination="S6L-hg-cne" id="dTJ-K9-WAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFP-qE-CyQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2950.7462686567164" y="134.55377574370709"/>
+            <point key="canvasLocation" x="3396" y="135"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wP5-Ng-ZIx">
@@ -373,9 +374,83 @@
             </objects>
             <point key="canvasLocation" x="-86.567164179104466" y="134.55377574370709"/>
         </scene>
+        <!--Profile Setup View Controller-->
+        <scene sceneID="RWS-gG-x7d">
+            <objects>
+                <viewController id="Xys-eR-30N" customClass="ProfileSetupViewController" customModule="FlashChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mNE-HZ-1Jz">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pWx-Rs-KCQ">
+                                <rect key="frame" x="141" y="218" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="P9V-YU-VnT"/>
+                                    <constraint firstAttribute="width" constant="120" id="TYu-9f-lVr"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxz-kg-8Kq">
+                                <rect key="frame" x="61" y="362" width="280" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="BZk-MJ-mcb"/>
+                                    <constraint firstAttribute="height" constant="50" id="JuV-OV-lIn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add Photo"/>
+                                <connections>
+                                    <action selector="addPhotoPressed:" destination="Xys-eR-30N" eventType="touchUpInside" id="El7-Lt-Ke3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNn-Oj-T2J">
+                                <rect key="frame" x="61" y="716" width="280" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="VMp-gD-dYd"/>
+                                    <constraint firstAttribute="height" constant="50" id="plW-3m-W0a"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Continue"/>
+                                <connections>
+                                    <action selector="continuePressed:" destination="Xys-eR-30N" eventType="touchUpInside" id="Dot-sM-ZIa"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Display Name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8sV-ff-lqk">
+                                <rect key="frame" x="61" y="436" width="280" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3pr-Vd-eY3"/>
+                                    <constraint firstAttribute="width" constant="280" id="qPW-o1-qGd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yKq-Mg-zU5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yNn-Oj-T2J" firstAttribute="centerX" secondItem="mNE-HZ-1Jz" secondAttribute="centerX" id="1HW-KL-GeE"/>
+                            <constraint firstItem="Fxz-kg-8Kq" firstAttribute="top" secondItem="pWx-Rs-KCQ" secondAttribute="bottom" constant="24" id="6lP-Hh-bPv"/>
+                            <constraint firstItem="8sV-ff-lqk" firstAttribute="top" secondItem="Fxz-kg-8Kq" secondAttribute="bottom" constant="24" id="91O-aE-Q2h"/>
+                            <constraint firstItem="Fxz-kg-8Kq" firstAttribute="centerX" secondItem="mNE-HZ-1Jz" secondAttribute="centerX" id="EPy-vq-kpD"/>
+                            <constraint firstItem="yKq-Mg-zU5" firstAttribute="bottom" secondItem="yNn-Oj-T2J" secondAttribute="bottom" constant="40" id="I6Q-cp-ivq"/>
+                            <constraint firstItem="8sV-ff-lqk" firstAttribute="centerX" secondItem="mNE-HZ-1Jz" secondAttribute="centerX" id="M0h-2v-2LA"/>
+                            <constraint firstItem="pWx-Rs-KCQ" firstAttribute="centerX" secondItem="mNE-HZ-1Jz" secondAttribute="centerX" id="sDq-ZD-C23"/>
+                            <constraint firstItem="pWx-Rs-KCQ" firstAttribute="top" secondItem="yKq-Mg-zU5" secondAttribute="top" constant="40" id="w3f-Xs-srb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MR3-Y3-Ebv"/>
+                    <connections>
+                        <outlet property="displayNameTextField" destination="8sV-ff-lqk" id="jvK-uN-lJv"/>
+                        <outlet property="profileImageView" destination="pWx-Rs-KCQ" id="dMO-co-csf"/>
+                        <segue destination="lwd-AH-u8E" kind="show" identifier="ProfileSetupToChat" id="mjr-EZ-4hi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7eC-NC-UFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986.5671641791043" y="134.55377574370709"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tRk-vp-Gse"/>
+        <segue reference="ep7-Dd-6JD"/>
+        <segue reference="kRb-6S-jyo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>

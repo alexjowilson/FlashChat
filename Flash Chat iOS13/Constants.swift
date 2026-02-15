@@ -9,9 +9,10 @@
 struct Constants {
     static let cellIdentifier = "ReusableCell"
     static let cellNibName = "MessageCell"
-    static let registerSegue = "RegisterToChat"
-    static let loginSegue = "LoginToChat"
     static let title = "FlashChat⚡️"
+    static let registerSegue = "RegisterToProfileSetup"
+    static let loginSegue = "LoginToProfileSetup"
+    static let profileSetupSegue = "ProfileSetupToChat"
     
     struct BrandColors {
         static let purple = "BrandPurple"
@@ -25,6 +26,12 @@ struct Constants {
         static let senderField = "sender"
         static let bodyField = "body"
         static let dateField = "date"
+        
+        static let usersCollection = "users"
+        static let displayNameField = "displayName"
+        static let profilePicField = "profilePicURL"
+        static let emailField = "email"
+        static let createdAtField = "createdAt"
     }
 }
      

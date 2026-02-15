@@ -36,6 +36,8 @@ class ChatViewController: UIViewController {
     
     var messages: [Message] = []
     
+    private let spinner = UIActivityIndicatorView(style: .large)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("inside viewDidLoad() of ChatViewController()")
@@ -55,6 +57,18 @@ class ChatViewController: UIViewController {
         navigationItem.hidesBackButton = true
         tableView.dataSource = self
         tableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
+        
+        // Show spinner as messages are loading
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.hidesWhenStopped = true
+        view.addSubview(spinner)
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        spinner.startAnimating()
+        
+        
         loadMessages()
         
     }
@@ -125,6 +139,7 @@ class ChatViewController: UIViewController {
 
                         // Reload table *once* after processing all documents
                         DispatchQueue.main.async {
+                            self.spinner.stopAnimating()
                             self.tableView.reloadData()
 
                             // Optional: scroll to the latest message
