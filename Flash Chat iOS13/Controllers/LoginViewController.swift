@@ -100,9 +100,8 @@ class LoginViewController: UIViewController {
 			   let displayName = document.data()?[Constants.FStore.displayNameField] as? String,
 			   !displayName.isEmpty {
 				// Profile exists → go directly to Chat
-				self.performSegue(withIdentifier: "LoginToChat", sender: self)
-			} else {
-				// No profile → go to ProfileSetup
+				self.performSegue(withIdentifier: Constants.loginToChatDirectSegue, sender: self)
+			} else { // No profile → go to ProfileSetup
 				self.performSegue(withIdentifier: Constants.loginSegue, sender: self)
 			}
 		}

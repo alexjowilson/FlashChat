@@ -33,9 +33,9 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     
     let db = Firestore.firestore() // initialize firebase firestore
-    
     var messages: [Message] = []
-    
+	var currentUserDisplayName: String = ""
+	
     private let spinner = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
@@ -68,12 +68,24 @@ class ChatViewController: UIViewController {
         ])
         spinner.startAnimating()
         
-        
+		fetchCurrentUserDisplayName()
         loadMessages()
         
     }
     
-    @objc func endEditing() {
+
+	private func fetchCurrentUserDisplayName() {
+		guard let uid = Auth.auth().currentUser?.uid else { return }
+		db.collection(Constants.FStore.usersCollection).document(uid).getDocument { [weak self] document, error in
+			if let document = document, document.exists,
+			   let displayName = document.data()?[Constants.FStore.displayNameField] as? String {
+				self?.currentUserDisplayName = displayName
+		 }
+	 }
+ }
+	
+	
+	@objc func endEditing() {
         view.endEditing(true)
     }
     
@@ -131,8 +143,10 @@ class ChatViewController: UIViewController {
                             if let sender = data[Constants.FStore.senderField] as? String,
                                let messageBody = data[Constants.FStore.bodyField] as? String,
                                let timestamp = data[Constants.FStore.dateField] as? Timestamp{
-
-                                let newMessage = Message(sender: sender, body: messageBody, timestamp: timestamp.dateValue())
+								
+								// Get senderName, fallback to email if not present
+								let senderName = data[Constants.FStore.senderNameField] as? String ?? sender
+								let newMessage = Message(sender: sender, senderName: senderName, body: messageBody, timestamp: timestamp.dateValue())
                                 self.messages.append(newMessage)
                             }
                         }
@@ -170,14 +184,12 @@ class ChatViewController: UIViewController {
         
         // Disable button to prevent double taps
         sendButton.isEnabled = false
-        
-        
         debugLog("messageBody and messageSender exist")
-        
         
         // add in firebase db
         db.collection(Constants.FStore.collectionName).addDocument(data: [
             Constants.FStore.senderField: messageSender,
+			Constants.FStore.senderNameField: currentUserDisplayName,
             Constants.FStore.bodyField: messageBody,
             Constants.FStore.dateField: Timestamp(date: Date())
         ]) { [weak self] error in
