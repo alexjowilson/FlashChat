@@ -12,6 +12,13 @@ This project demonstrates clean architecture, real-time data syncing using **Fir
 - Automatic session handling 
 - Input validation with user-friendly error alerts 
 
+### 👤 Profile Setup
+- Display name entry on first registration
+- Profile photo upload via camera or photo library
+- Photos stored in **Firebase Storage**
+- Profile data persisted in **Firestore** users collection
+- Returning users skip profile setup automatically
+
 ### 💬 Real-Time Messaging
 - Messages sync instantly using **Firestore Snapshot Listeners**
 - Messages auto-sort by timestamp  
@@ -20,12 +27,14 @@ This project demonstrates clean architecture, real-time data syncing using **Fir
 - Toast notifications for message status
 - Empty message validation
 
-### 👤 Sender & Receiver UI
+### 🧑‍🤝‍🧑 Sender & Receiver UI
 - Custom `UITableViewCell` showing:
-  - Left avatar for messages from other users  
-  - Right avatar for messages sent by you  
+  - Left avatar + timestamp for messages from other users  
+  - Right avatar + timestamp for messages sent by you  
+- Profile photos loaded asynchronously with in-memory `NSCache` image caching
+- Placeholder avatar shown while photo loads or if none is set
 - Dynamic bubble color and alignment  
-- Supports multi-line text with auto-sizing  
+- Supports multi-line text with auto-sizing cells
 
 ### 🎨 Custom UI & Animations
 - Polished UIKit interface  
@@ -42,7 +51,8 @@ This project demonstrates clean architecture, real-time data syncing using **Fir
 ### 📦 Swift Package Manager (SPM)
 All external libraries installed via SPM:
 - FirebaseAuth  
-- FirebaseFirestore  
+- FirebaseFirestore
+- FirebaseStorage
 - GhostTypewriter  
 
 ---
@@ -64,9 +74,9 @@ All external libraries installed via SPM:
 ---
 
 ### **Chat Interface**
-| Empty Chat | Typing | Sent | Chatting |
-|------------|--------|------|----------|
-| <img src="Screenshots/AfterSigningIn.png" width="250"/> | <img src="Screenshots/TypingMessage.png" width="250"/> | <img src="Screenshots/SentMessage.png" width="250"/> | <img src="Screenshots/Chatting.png" width="250"/> |
+| Empty Chat | Typing | Group Chat |
+|------------|--------|------------|
+| <img src="Screenshots/AfterSigningIn.png" width="250"/> | <img src="Screenshots/TypingMessage.png" width="250"/> | <img src="Screenshots/Group_Chat.png" width="250"/> |
 
 ---
 
@@ -84,6 +94,7 @@ FlashChat/
 │   ├── WelcomeViewController.swift
 │   ├── RegisterViewController.swift
 │   ├── LoginViewController.swift
+│   ├── ProfileSetupViewController.swift
 │   └── ChatViewController.swift
 │
 ├── Models/
@@ -112,9 +123,11 @@ FlashChat/
 | **UIKit** | UI framework |
 | **Firebase Auth** | User authentication |
 | **Firebase Firestore** | Real-time database |
+| **Firebase Storage** | Profile photo storage |
 | **Swift Package Manager** | Dependency management |
 | **AutoLayout** | Responsive UI layouts |
 | **KeyboardLayoutGuide** | Modern keyboard handling |
+| **NSCache** | In-memory image caching |
 
 ---
 
@@ -137,23 +150,25 @@ Place your GoogleService-Info.plist inside the root of the Xcode project.
 
 Choose a simulator and hit ⌘ + R.
 
+---
+
 ## 💡 What I Learned
 
-Integrating Firebase using SPM
+- Integrating Firebase Auth, Firestore, and Storage using SPM
+- Building a real-time app with Firestore snapshot listeners
+- Uploading and retrieving images with Firebase Storage
+- Designing custom chat UI with dynamic auto-sizing cells
+- Implementing an in-memory image cache with `NSCache` to avoid redundant network requests
+- Fixing threading bugs — dispatching UI and navigation calls to the main thread from Firestore callbacks
+- Eliminating race conditions by sequencing async profile fetches before enabling user interaction
+- Understanding optional binding (`if let`) and user authentication flows
+- Using `keyboardLayoutGuide` to create responsive chat input UX
+- Removing CocoaPods and migrating old projects to SPM
+- Working with Storyboards + XIB-based reusable cells
+- Implementing dual-label layouts for dynamic UI alignment
+- Denormalizing Firestore data (embedding sender profile pic URL in message documents) to avoid per-cell reads
 
-Building a real-time app with Firestore snapshot listeners
-
-Designing custom chat UI with dynamic auto-sizing cells
-
-Understanding optional binding (if let) and user authentication flows
-
-Using keyboardLayoutGuide to create responsive chat input UX
-
-Removing CocoaPods and migrating old projects to SPM
-
-Working with Storyboards + XIB-based reusable cells
-
-Implementing dual-label layouts for dynamic UI alignment
+---
 
 ## 🧠 Reliability & Memory Profiling (Xcode Instruments)
 
@@ -166,6 +181,7 @@ To validate memory behavior and catch potential retain cycles, I profiled the co
 
 <img src="Screenshots/Instrument.jpg" width="900" alt="Xcode Instruments showing Leaks checks passing and Allocations timeline for FlashChat"/>
 
+---
 
 ## 📬 Contact
 

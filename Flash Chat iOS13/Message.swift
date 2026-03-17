@@ -9,7 +9,9 @@
 import Foundation
 
 struct Message{
-    let sender: String // leomessi@gmail.com
-    let body: String
+    let sender: String // email (for identifying current user)
+	let senderName: String // display name (for showing in the UI)
+	let senderProfilePicURL: String? // profile pic URL from Firebase Storage
+	let body: String
     let timestamp: Date
 }

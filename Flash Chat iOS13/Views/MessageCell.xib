@@ -32,7 +32,7 @@
                                 <rect key="frame" x="50" y="0.0" width="265" height="42.666666666666664"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWX-NM-ibu">
-                                        <rect key="frame" x="15" y="10.000000000000002" width="265" height="22.666666666666671"/>
+                                        <rect key="frame" x="15" y="10.000000000000002" width="235" height="22.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="BrandLightPurple"/>
                                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                 <constraints>
                                     <constraint firstItem="hWX-NM-ibu" firstAttribute="leading" secondItem="F5K-zx-iWF" secondAttribute="leading" constant="15" id="Ait-rL-QRk"/>
                                     <constraint firstAttribute="bottom" secondItem="hWX-NM-ibu" secondAttribute="bottom" constant="10" id="NjI-Yr-wJv"/>
-                                    <constraint firstAttribute="trailing" secondItem="hWX-NM-ibu" secondAttribute="trailing" constant="-15" id="blA-iz-U69"/>
+                                    <constraint firstAttribute="trailing" secondItem="hWX-NM-ibu" secondAttribute="trailing" constant="15" id="TIr-f4-m1x"/>
                                     <constraint firstItem="hWX-NM-ibu" firstAttribute="top" secondItem="F5K-zx-iWF" secondAttribute="top" constant="10" id="h9E-wC-6o5"/>
                                 </constraints>
                             </view>
@@ -71,14 +71,11 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="bHc-6a-6Ov" secondAttribute="bottom" constant="8" id="1FP-J4-3hL"/>
                     <constraint firstItem="bHc-6a-6Ov" firstAttribute="top" secondItem="PTN-0i-hjt" secondAttribute="bottom" constant="4" id="985-hh-C7P"/>
-                    <constraint firstItem="PTN-0i-hjt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GQM-q6-FFA"/>
                     <constraint firstItem="75t-D6-SXN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="KeG-II-Dzb"/>
                     <constraint firstAttribute="bottom" secondItem="75t-D6-SXN" secondAttribute="bottom" constant="8" id="P9g-5L-b4K"/>
                     <constraint firstAttribute="trailing" secondItem="bHc-6a-6Ov" secondAttribute="trailing" constant="11" id="Wyk-L0-SQH"/>
                     <constraint firstItem="PTN-0i-hjt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="XUQ-OD-b0j"/>
-                    <constraint firstAttribute="trailing" secondItem="PTN-0i-hjt" secondAttribute="trailing" constant="10" id="cFn-B6-otR"/>
                     <constraint firstAttribute="trailing" secondItem="PTN-0i-hjt" secondAttribute="trailing" constant="10" id="eJR-Te-8St"/>
-                    <constraint firstItem="PTN-0i-hjt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fat-rU-LeZ"/>
                     <constraint firstItem="PTN-0i-hjt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hbI-yy-Dzv"/>
                     <constraint firstItem="75t-D6-SXN" firstAttribute="top" secondItem="PTN-0i-hjt" secondAttribute="bottom" constant="4" id="uUe-tV-tSi"/>
                 </constraints>
@@ -105,7 +102,7 @@
             <color red="0.67500001192092896" green="0.43500000238418579" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

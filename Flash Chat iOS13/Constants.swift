@@ -13,6 +13,7 @@ struct Constants {
     static let registerSegue = "RegisterToProfileSetup"
     static let loginSegue = "LoginToProfileSetup"
     static let profileSetupSegue = "ProfileSetupToChat"
+	static let loginToChatDirectSegue = "LoginToChat"
     
     struct BrandColors {
         static let purple = "BrandPurple"
@@ -24,7 +25,10 @@ struct Constants {
     struct FStore {
         static let collectionName = "messages"
         static let senderField = "sender"
-        static let bodyField = "body"
+		static let senderNameField = "senderName"
+		static let senderProfilePicURLField = "senderProfilePicURL"
+		
+		static let bodyField = "body"
         static let dateField = "date"
         
         static let usersCollection = "users"
